@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 100;
   font-size: 14px;
   color: hsl(214, 17%, 51%);
@@ -19,7 +19,7 @@ body {
 .outer-div {
   // background: url(../../images/bg-desktop.png) right bottom no-repeat,
   //   $ver;
-  background-color: burlywood;
+  background-color: hsl(210, 46%, 95%);
   background-size: contain;
   display: flex;
   align-items: center;
@@ -35,7 +35,8 @@ body {
   align-items: center;
   height: 350px;
   border-radius: 10px;
-  background-color: hsl(210, 46%, 95%);
+  background-color: #fff;
+  box-shadow: 0 3px 17px hsl(217, 19%, 35%) 0;
 }
 
 .img-container {
@@ -50,19 +51,215 @@ body {
 
 .text-container {
   flex: 60%;
-  padding: 15px;
+  padding: 35px 45px;
+  margin: 15px;
+}
+
+.text-container h2 {
+  font-size: 26px;
+  color: hsl(217, 19%, 35%);
+}
+
+.text-container p {
+  font-size: 18px;
 }
 
 .info-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
-.info-container img {
-  height: 75px;
+.img-circle img {
+  height: 55px;
   border-radius: 50%;
 }
 
 .info-name {
   margin-right: auto;
+  margin-left: 10px;
+}
+
+.share img {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: hsl(214, 17%, 51%);
+}
+
+.share:hover ~ .bubble-container {
+  display: block;
+}
+
+.bubble-container {
+  display: none;
+  position: absolute;
+  right: -87px;
+  top: -87px;
+}
+
+.speech-bubble {
+  background: #fff;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0 auto 40px;
+  max-width: 400px;
+  padding: 5px 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: 0 0 10px;
+
+    :last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &::after {
+    border-left: 27px solid transparent;
+    border-top: 44px solid #fff;
+    bottom: -26px;
+    content: '';
+    position: absolute;
+    right: 0px;
+  }
+
+  &__gb-amount {
+    font-size: 36px;
+    font-weight: 600;
+    color: #000;
+    // margin: 0 !important;
+  }
+
+  &__gb-left {
+    // margin: 0 !important;
+    color: blue;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+}
+
+.bubble {
+  // height: 100px;
+  // width: 30%;
+  min-width: 200px;
+  background: hsl(217, 19%, 35%);
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 15px;
+  text-align: center;
+}
+
+.pointer {
+  height: 25px;
+  width: 25px;
+  background: hsl(217, 19%, 35%);
+  margin: 0 auto;
+  transform: rotate(45deg);
+  border-radius: 0 0 0px 0;
+  margin-top: -13px;
+  position: relative;
+  left: calc(0.5vw);
+}
+
+.name {
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.date {
+  margin-top: 2px;
+}
+.bubble-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bubble-content span {
+  letter-spacing: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: 550px;
+    overflow: hidden;
+  }
+
+  .img-container {
+    flex: none;
+    width: 100%;
+
+    height: 46%;
+  }
+  .text-container {
+    flex: none;
+    padding: 30px 5px;
+  }
+
+  .text-container h2 {
+    font-size: 14px;
+  }
+
+  .text-container p {
+    font-size: 12px;
+  }
+
+  // .share:hover .info-container:hover {
+  //   background-color: black;
+  // }
+
+  .pointer {
+    display: none;
+  }
+
+  .bubble-container {
+    position: absolute;
+    // right: 93px;
+    top: -60px;
+    left: -52px;
+    // top: 0;
+
+    // overflow: hidden;
+  }
+
+  .bubble {
+    height: 80px;
+    // width: 100%;
+    min-width: 410px;
+    background: hsl(217, 19%, 35%);
+
+    // display: block;
+    // margin: 0 auto;
+    // border-radius: 20px;
+    // margin-top: 50px;
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .img-circle img {
+    height: 45px;
+  }
+
+  .img-container {
+    border-bottom-left-radius: 0px;
+  }
+
+  .bubble-content {
+    justify-content: space-evenly;
+  }
+
+  .attribution {
+    display: none;
+  }
 }
