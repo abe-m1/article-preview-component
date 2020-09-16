@@ -64,8 +64,6 @@ body {
     padding: 7px; }
   .info-box__share-icon {
     z-index: 10; }
-  .info-box__share:hover ~ .bubble-container {
-    display: block; }
 
 .name {
   font-weight: 700;
@@ -77,17 +75,17 @@ body {
 .bubble-container {
   display: none;
   position: absolute;
-  right: -87px;
-  top: -87px; }
+  bottom: 60px;
+  right: -100px; }
 
 .bubble {
   min-width: 200px;
   background: #48556a;
   display: block;
   margin: 0 auto;
-  border-radius: 20px;
+  border-radius: 15px;
   margin-top: 50px;
-  padding: 15px;
+  padding: 20px;
   text-align: center; }
 
 .pointer {
@@ -114,6 +112,9 @@ body {
 
 .attribution a {
   color: #3e52a3; }
+
+.show {
+  display: block; }
 
 @media only screen and (max-width: 768px) {
   .container {
